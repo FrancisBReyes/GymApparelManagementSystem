@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gym.store.constants.StoreConstants;
 import com.gym.store.rest.UserRest;
 import com.gym.store.service.UserService;
+import com.gym.store.utils.StoreUtils;
 
 @RestController
 public class UserRestImpl implements UserRest{
@@ -23,6 +25,6 @@ public class UserRestImpl implements UserRest{
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
-		return new ResponseEntity<String>("{\"message\":\"Something went Wrong\"}",HttpStatus.INTERNAL_SERVER_ERROR);
+		return StoreUtils.getResponseEntity(StoreConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

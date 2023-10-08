@@ -10,6 +10,6 @@ public class StoreUtils {
 	}
 	
 	public static ResponseEntity<String> getResponseEntity(String responseMessage, HttpStatus httpStatus){
-		return new ResponseEntity<String>("{\"message\":\""+responseMessage+"\"}",HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<String>("{\"message\":\""+responseMessage+"\"}", httpStatus);
 	}
 }
